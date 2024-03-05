@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #d6e5fa;
+}
+
+h2 {
+  color: #d77fa1;
+  margin: 2.5rem;
+  font-size: 3rem;
+}
+
+button {
+  background-color: #baabda;
+  color: #fff9f9;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  padding: 10px;
+  border: 1px solid #fff9f9;
+  font-size: 1.5rem;
+  margin: 1rem;
+  text-transform: capitalize;
+}
+
+#choices {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.choice-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem 2rem;
+  width: 50%;
+}
+
+.choice {
+  color: #baabda;
+  font-size: 5rem;
+}
+
+.rotate-flip {
+  transform: rotate(-90deg) scaleX(-1);
+}

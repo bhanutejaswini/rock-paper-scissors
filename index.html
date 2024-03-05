@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock-Paper-Scissors Game</title>
+
+    <!-- Font Awesome Link -->
+    <script
+      src="https://kit.fontawesome.com/44d53da720.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="choices">
+      <div id="computer" class="choice-container">
+        <h2>Computer</h2>
+        <div id="computer-choice" class="choice"></div>
+      </div>
+      <div id="user" class="choice-container">
+        <h2>User</h2>
+        <div id="user-choice" class="choice"></div>
+      </div>
+    </div>
+
+    <h2>Result: <span id="result"></span></h2>
+
+    <div id="choice-buttons">
+      <button id="rock">rock</button>
+      <button id="paper">paper</button>
+      <button id="scissors">scissors</button>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
