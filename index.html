@@ -15,24 +15,38 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div id="choices">
-      <div id="computer" class="choice-container">
-        <h2>Computer</h2>
-        <div id="computer-choice" class="choice"></div>
+    <header>
+      <h1>Rock Paper Scissors</h1>
+    </header>
+
+    <main>
+      <div id="score-board">
+        <div id="computer-label" class="score-label">computer</div>
+        <div id="user-label" class="score-label">user</div>
+        <h3 id="score">
+          <span id="computer-score">0</span> : <span id="user-score">0</span>
+        </h3>
       </div>
-      <div id="user" class="choice-container">
-        <h2>User</h2>
+
+      <div id="choices">
+        <div id="computer-choice" class="choice"></div>
         <div id="user-choice" class="choice"></div>
       </div>
-    </div>
 
-    <h2>Result: <span id="result"></span></h2>
+      <h2 id="result"></h2>
 
-    <div id="choice-buttons">
-      <button id="rock">rock</button>
-      <button id="paper">paper</button>
-      <button id="scissors">scissors</button>
-    </div>
+      <div id="user-choice-container">
+        <div id="rock" class="user-choice">
+          <i class="fa fa-solid fa-hand-back-fist"></i>
+        </div>
+        <div id="paper" class="user-choice">
+          <i class="fas fa-hand"></i>
+        </div>
+        <div id="scissors" class="user-choice">
+          <i class="fa fa-solid fa-hand-scissors"></i>
+        </div>
+      </div>
+    </main>
 
     <script src="./app.js"></script>
   </body>

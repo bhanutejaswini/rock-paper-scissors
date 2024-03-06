@@ -1,31 +1,24 @@
 const computerChoice = document.getElementById("computer-choice");
 const userChoice = document.getElementById("user-choice");
+const computerScore = document.getElementById("computer-score");
+const userScore = document.getElementById("user-score");
 const result = document.getElementById("result");
-const choices = document.querySelectorAll("button");
+const choices = document.querySelectorAll(".user-choice");
+console.log(choices);
 
-let computerChoiceVal, userChoiceVal;
-
-choices.forEach((choice) =>
-  choice.addEventListener("click", (e) => {
-    userChoiceVal = e.target.id;
-
-    generateComputerChoice();
-    displayComputerChoice();
-    displayUserChoice();
-    displayResult();
-  })
-);
+let computerChoiceVal,
+  userChoiceVal,
+  computerScoreVal = 0,
+  userScoreVal = 0;
 
 const generateComputerChoice = () => {
-  const random = Math.floor(Math.random() * 3 + 1);
+  const choiceArray = ["rock", "paper", "scissors"];
+  const random = Math.floor(Math.random() * 3);
 
-  if (random === 1) computerChoiceVal = "rock";
-  else if (random === 2) computerChoiceVal = "paper";
-  else computerChoiceVal = "scissors";
+  return choiceArray[random];
 };
 
 const displayComputerChoice = () => {
-  console.log(computerChoiceVal);
   if (computerChoiceVal === "rock")
     computerChoice.innerHTML =
       '<i class="fa fa-solid fa-hand-back-fist fa-rotate-90"></i>';
@@ -45,25 +38,60 @@ const displayUserChoice = () => {
   else userChoice.innerHTML = '<i class="fa fa-solid fa-hand-scissors"></i>';
 };
 
+const win = () => {
+  userScoreVal += 1;
+  userScore.innerHTML = userScoreVal;
+  computerScore.innerHTML = computerScoreVal;
+
+  result.innerHTML = "You Win!";
+};
+
+const lose = () => {
+  computerScoreVal += 1;
+  userScore.innerHTML = userScoreVal;
+  computerScore.innerHTML = computerScoreVal;
+
+  result.innerHTML = "You Lose!";
+};
+
+const draw = () => {
+  userScore.innerHTML = userScoreVal;
+  computerScore.innerHTML = computerScoreVal;
+
+  result.innerHTML = "It's a Draw!";
+};
+
 const displayResult = () => {
-  if (computerChoiceVal === userChoiceVal) result.innerHTML = "It's a Draw!!";
-  else if (computerChoiceVal === "rock") {
-    if (userChoiceVal == "paper") {
-      result.innerHTML = "You Win!";
-    } else {
-      result.innerHTML = "You Lose!";
-    }
-  } else if (computerChoiceVal === "paper") {
-    if (userChoiceVal == "scissors") {
-      result.innerHTML = "You Win!";
-    } else {
-      result.innerHTML = "You Lose!";
-    }
-  } else {
-    if (userChoiceVal == "rock") {
-      result.innerHTML = "You Win!";
-    } else {
-      result.innerHTML = "You Lose!";
-    }
+  // console.log(userChoiceVal + " " + computerChoiceVal);
+  switch (userChoiceVal + " " + computerChoiceVal) {
+    case "rock scissors":
+    case "scissors paper":
+    case "paper rock":
+      win();
+      break;
+    case "scissors rock":
+    case "paper scissors":
+    case "rock paper":
+      lose();
+      break;
+    default:
+      draw();
   }
 };
+
+const display = () => {
+  computerChoiceVal = generateComputerChoice();
+  console.log(computerChoiceVal);
+  displayComputerChoice();
+  displayUserChoice();
+  displayResult();
+};
+
+choices.forEach((choice) =>
+  choice.addEventListener("click", (e) => {
+    userChoiceVal = e.currentTarget.id;
+    console.log(e.target);
+
+    display();
+  })
+);

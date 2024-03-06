@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap");
+
 *,
 *::before,
 *::after {
@@ -7,31 +9,71 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
   height: 100vh;
   background-color: #d6e5fa;
+  font-family: "Exo 2", sans-serif;
 }
 
 h2 {
   color: #d77fa1;
-  margin: 2.5rem;
   font-size: 3rem;
+  margin: 20px;
 }
 
-button {
-  background-color: #baabda;
+h3 {
+  color: #b784b7;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* HEADER */
+header {
+  background-color: #8e7ab5;
+  color: #fff9f9;
+  padding: 20px;
+}
+
+header > h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* MAIN */
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#score-board {
+  margin: 50px 0;
+  border: 4px solid #fff9f9;
+  padding: 20px 100px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.score-label {
+  background-color: #b784b7;
   color: #fff9f9;
   font-weight: bold;
-  border-radius: 0.5rem;
-  padding: 10px;
-  border: 1px solid #fff9f9;
   font-size: 1.5rem;
-  margin: 1rem;
+  padding: 5px;
   text-transform: capitalize;
+  position: absolute;
+  border-radius: 5px;
+}
+
+#computer-label {
+  top: 12px;
+  left: -80px;
+}
+
+#user-label {
+  top: 12px;
+  right: -30px;
 }
 
 #choices {
@@ -41,18 +83,32 @@ button {
   align-items: center;
 }
 
-.choice-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 1.5rem 2rem;
-  width: 50%;
-}
-
 .choice {
   color: #baabda;
   font-size: 5rem;
+  margin: 15px 50px;
+}
+
+#user-choice-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.user-choice {
+  background-color: #baabda;
+  color: #fff9f9;
+  font-size: 2rem;
+  padding: 30px;
+  border: 3px solid #fff9f9;
+  border-radius: 50%;
+  margin: 15px;
+}
+
+.user-choice:hover {
+  cursor: pointer;
+  background-color: #8e7ab5;
 }
 
 .rotate-flip {
