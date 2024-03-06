@@ -4,7 +4,6 @@ const computerScore = document.getElementById("computer-score");
 const userScore = document.getElementById("user-score");
 const result = document.getElementById("result");
 const choices = document.querySelectorAll(".user-choice");
-console.log(choices);
 
 let computerChoiceVal,
   userChoiceVal,
@@ -62,7 +61,6 @@ const draw = () => {
 };
 
 const displayResult = () => {
-  // console.log(userChoiceVal + " " + computerChoiceVal);
   switch (userChoiceVal + " " + computerChoiceVal) {
     case "rock scissors":
     case "scissors paper":
@@ -81,7 +79,6 @@ const displayResult = () => {
 
 const display = () => {
   computerChoiceVal = generateComputerChoice();
-  console.log(computerChoiceVal);
   displayComputerChoice();
   displayUserChoice();
   displayResult();
@@ -90,8 +87,6 @@ const display = () => {
 choices.forEach((choice) =>
   choice.addEventListener("click", (e) => {
     userChoiceVal = e.currentTarget.id;
-    console.log(e.target);
-
     display();
   })
 );
