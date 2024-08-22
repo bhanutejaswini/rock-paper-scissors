@@ -7,8 +7,10 @@ Built using HTML, CSS and JavaScript
 
 After few games
 
-![image](https://github.com/user-attachments/assets/778e8357-b466-4ecb-ab61-81a6fb044ea8)
+![image](https://github.com/user-attachments/assets/c07b6eb5-a666-497a-9512-c4c07d8e374d)
 
-When player score 5 points
+When player scores 5 points
 
-![image](https://github.com/user-attachments/assets/1b7647b3-4270-4806-946d-75b45f7d6b05)
+![image](https://github.com/user-attachments/assets/ea576d86-3a58-42f1-9213-ec0ec3823c27)
+
+
